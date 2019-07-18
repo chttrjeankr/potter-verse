@@ -14,7 +14,7 @@ print('Ready')
 def get_anim(spell):
     file_name = '_'.join(spell.lower().split())+'.gif'
     user = "chttrjeankr"
-    repository = "Potterverse"
+    repository = "potter-verse"
     branch = "master"
     file_path = "gifs"
     link = f"https://raw.githubusercontent.com/{user}/{repository}/{branch}/{file_path}/{file_name}"
@@ -43,8 +43,8 @@ def react(message):
 			spell = spell['Spells'].to_list()[0]
 			anim = get_anim(spell)
 			print(anim)
-			# msg = bot.send_document(message.from_user.id, anim)
-			# print(msg)
+			msg = bot.send_document(message.from_user.id, anim)
+			print(msg)
 		except Exception as e:
 			print(e)
 			bot.send_message(message.from_user.id,"Let's assume there's something interesting in this message")
