@@ -37,6 +37,7 @@ def default_handler(message):
 def react(message):
     # print(message)
     # print()
+    bot.send_chat_action(message.from_user.id,'typing')
     try:
         spell = df[df['Spells'].str.contains(message.text,case=False)]
         reply = spell['Reactions'].to_list()[0]
