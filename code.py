@@ -53,7 +53,7 @@ def react(message):
     except:
         reply = "I haven't learned that spell yet"
         meme = random.choice(os.listdir(os.getcwd()+'/funny'))
-        meme_url = get_anim(file_name = meme, file_path = 'funny')
+        meme_url = get_anim(file_name = meme, branch = 'random_funnies', file_path = 'funny')
         bot.send_document(message.from_user.id, meme_url)
     bot.reply_to(message, reply)
 
