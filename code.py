@@ -43,7 +43,7 @@ def react(message):
         reply = spell['Reactions'].to_list()[0]
         try:
             spell = spell['Spells'].to_list()[0]
-            anim = get_anim(spell)
+            anim = get_anim(spell, branch='random_funnies')
             print(anim)
             msg = bot.send_document(message.from_user.id, anim)
             print(msg)
